@@ -1,0 +1,2 @@
+where pdbstr.exe 1>nul 2>nul || @set "path=C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\srcsrv;%path%"
+where windbg.exe 1>nul 2>nul || @set "path=C:\Program Files (x86)\Windows Kits\10\Debuggers\x86;%path%"
