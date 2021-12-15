@@ -1,5 +1,5 @@
 SourceIndexLight_forGit
-source index for git repo.
+source index for git repo -- it is faster than the sourceIndex_forGit.
 current windbg source index suite doesn't support git repo. here one solution is given by DOS script.
 
 Usage :
