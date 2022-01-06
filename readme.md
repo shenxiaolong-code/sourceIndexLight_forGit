@@ -1,6 +1,6 @@
 SourceIndexLight_forGit
 windbg source index for git repo -- it is faster than the sourceIndex_forGit.
-current windbg source index suite doesn't support git repo. here one solution is given by DOS script.
+The current windbg source index suite doesn't support git repo. here one solution is given by DOS script.
 
 Usage :
 Syntax:
@@ -8,24 +8,24 @@ gitIndex.cmd <sourceCodeDir> <pdbFilePath>
 .e.g
 gitIndex.cmd "d:\myProject\newFeature" "d:\myProject\newFeature\output\bin\myApp.pdb"
 gitIndex.cmd will make source index for this pdb file "d:\myProject\newFeature\output\bin\myApp.pdb" and update this pdb file.
-you can refer to example in path :test/TC_gitIndex.bat
+you can refer to the example in path:test/TC_gitIndex.bat
 
 Prompt
-a.  for one solution with many projects/binaryModules, one time is enough to call gitIndex.cmd.
-    In general , you can call gitIndex.cmd for your pdb file of .exe module.
-b.  you can configure the Post-Build Event in your visual studio project to simply thos procedure.
+a.  for one solution with many projects/binary modules, one time is enough to call gitIndex.cmd.
+    In general, you can call gitIndex.cmd for your PDB file of the .exe module.
+b.  you can configure the Post-Build Event in your visual studio project to simplify this procedure.
     steps in solution explorer : .exe project > right click > properties > Configuration Properties > Build Events > Post-Build Event :
 	Command Line : gitIndex.cmd "$(SolutionDir)" <ProjectPdbFilePath>
 
 Note:
 1. config windbg tool path
-if your windbg tool "pdbstr.exe" is added to %path%, you needn't do anything , else you need to update the file "userLocalPathConfig.bat"
+if your windbg tool "pdbstr.exe" is added to %path%, you needn't do anything, else you need to update the file "userLocalPathConfig.bat"
 below is my windbg x86 path setting:
 where pdbstr.exe 2>nul || @set "path=C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\srcsrv;%path%"
 where windbg.exe 2>nul || @set "path=C:\Program Files (x86)\Windows Kits\10\Debuggers\x86;%path%"
 
-2. you need to repare one local git repo
-it is used to update the git repo to specified commit id. 
+2. you need to prepare one local git repo
+it is used to update the git repo to a specified commit id. 
 e.g. assume your git repo path is "D:\sourceCode\myProjectGitRepo" and your git url is https://..../myRepo.git , you need to set environment varialbe :
 set "gitRepo_myRepo=D:\sourceCode\myProjectGitRepo"
 see :getRepoFromEvnVar in gitFetchRepo.cmd for detail.
