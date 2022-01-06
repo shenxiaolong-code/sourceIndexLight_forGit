@@ -52,3 +52,8 @@ it is used to update the git repo to a specified commit id.
      if your local git repo is "D:\sourceCode\myProjectGitRepo", you can run :  
      gitFetchRepo.cmd "D:\sourceCode\myProjectGitRepo" "c:\symbols\cache\myApp.pdb"  
      the gitFetchRepo.cmd will update the local repo folder "D:\sourceCode\myProjectGitRepo".
+
+# additional:  
+- index slower , debug faster -- use : https://github.com/ShenXiaolong1976/sourceIndex_forGit  
+- index faster , debug slower -- use : https://github.com/ShenXiaolong1976/sourceIndexLight_forGit
+
